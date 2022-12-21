@@ -1,0 +1,5 @@
+{
+  "tasks": {
+    "run": "mkdir -p build && cd build && cp ../wez.ts . && cp ../wezterm.ts . && sed -i 's%./wezterm.ts%./wezterm%' wez.ts && deno run -A npm:typescript-to-lua  wez.ts && sed -i  's/local wezterm = nil/local wezterm = require\"wezterm\"/' wez.lua && rm wez.ts && rm wezterm.ts"
+  }
+}
